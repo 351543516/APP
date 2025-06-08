@@ -1,0 +1,23 @@
+package com.xinghaogroup.health_app_server.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import com.baidu.aip.imageclassify.AipImageClassify; // 图像识别SDK包路径
+
+@Configuration
+public class BaiduAIConfig {
+    @Value("${baidu.aip.app-id}")
+    private String appId;
+
+    @Value("${baidu.aip.api-key}") // 修正为apiKey（驼峰命名）
+    private String apiKey;
+
+    @Value("${baidu.aip.secret-key}") // 修正为secretKey（驼峰命名）
+    private String secretKey;
+
+    @Bean("baiduAipClient")
+    public AipImageClassify baiduImageClassifyClient() {
+        return new AipImageClassify(appId, apiKey, secretKey);
+    }
+}

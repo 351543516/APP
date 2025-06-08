@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+    initialization-mode: never  # 禁用所有初始化脚本
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop  # 让 Hibernate 自动创建表结构
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+# 测试环境模拟配置
+aliyun:
+  ai:
+    app-code: test_app_code
+    app-key: test_app_key
+    base-url: http://test-api.example.com
+    tongue-api-url: http://test-tongue-api.example.com
+    face-api-url: http://test-face-api.example.com
+    constitution-api-url: http://test-constitution-api.example.com
+    timeout: 5000
+  oss:
+    url-prefix: "http://test-oss.example.com"
+    endpoint: test_oss_endpoint
+    access-key-id: test_access_key_id
+    access-key-secret: test_access_key_secret
+    bucket-name: test_bucket
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    com.xinghaogroup: DEBUG

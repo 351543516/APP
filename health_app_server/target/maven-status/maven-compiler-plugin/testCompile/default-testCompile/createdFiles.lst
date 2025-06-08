@@ -1,0 +1,8 @@
+com\xinghaogroup\health_app_server\HealthAppServerApplicationTests.class
+com\xinghaogroup\health_app_server\config\BCryptTest.class
+com\xinghaogroup\health_app_server\service\AuthServiceTest.class
+com\xinghaogroup\AppTest.class
+com\xinghaogroup\health_app_server\DataSourceTest.class
+com\xinghaogroup\health_app_server\utils\JwtUtilsTest.class
+com\xinghaogroup\health_app_server\config\TestConfig.class
+com\xinghaogroup\health_app_server\repository\UserRepositoryIntegrationTest.class

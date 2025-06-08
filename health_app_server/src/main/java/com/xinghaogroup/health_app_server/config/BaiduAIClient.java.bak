@@ -1,0 +1,17 @@
+package com.xinghaogroup.health_app_server.config;
+
+public class BaiduAIClient {
+    private String apiKey;
+    private String secretKey;
+
+    public BaiduAIClient(String apiKey, String secretKey) {
+        this.apiKey = apiKey;
+        this.secretKey = secretKey;
+    }
+
+    // 模拟发送请求
+    public BaiduAIResponse sendRequest(String requestData) {
+        // 这里可以实现具体的请求逻辑
+        return new BaiduAIResponse("success", "Request sent successfully");
+    }
+}

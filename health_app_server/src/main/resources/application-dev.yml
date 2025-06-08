@@ -1,0 +1,13 @@
+spring:
+  elasticsearch:
+    uris: http://dev-es-server:9200  # 开发环境ES地址
+    username: ${ELASTICSEARCH_USERNAME}
+    password: ${ELASTICSEARCH_PASSWORD}
+    connection-timeout: 5000
+    socket-timeout: 10000
+
+logging:
+  level:
+    root: DEBUG  # 开发环境开启DEBUG日志
+    org.springframework: DEBUG
+    com.xinghaogroup: DEBUG

@@ -1,0 +1,70 @@
+{
+  "properties": [
+    {
+      "name": "aliyun.ai.app-code",
+      "type": "java.lang.String",
+      "description": "阿里云AI服务的应用认证码(APPCODE)",
+      "sourceType": "com.xinghaogroup.health_app_server.config.AliyunAIConfig"
+    },
+    {
+      "name": "aliyun.ai.app-key",
+      "type": "java.lang.String",
+      "description": "阿里云AI服务的应用密钥(APPKEY)",
+      "sourceType": "com.xinghaogroup.health_app_server.client.AliyunAIClient"
+    },
+    {
+      "name": "aliyun.ai.base-url",
+      "type": "java.lang.String",
+      "description": "阿里云AI服务的基础API地址",
+      "defaultValue": "https://aliyun-ai.example.com"
+    },
+    {
+      "name": "aliyun.ai.tongue-api-url",
+      "type": "java.lang.String",
+      "description": "舌诊分析API端点",
+      "defaultValue": "${aliyun.ai.base-url}/tongue"
+    },
+    {
+      "name": "aliyun.ai.face-api-url",
+      "type": "java.lang.String",
+      "description": "面诊分析API端点",
+      "defaultValue": "${aliyun.ai.base-url}/face"
+    },
+    {
+      "name": "aliyun.ai.constitution-api-url",
+      "type": "java.lang.String",
+      "description": "体质识别API端点",
+      "defaultValue": "${aliyun.ai.base-url}/constitution"
+    },
+    {
+      "name": "aliyun.ai.timeout",
+      "type": "java.lang.Long",
+      "description": "HTTP请求超时时间(毫秒)",
+      "defaultValue": 5000
+    },
+    {
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String",
+      "description": "阿里云OSS服务端点地址",
+      "sourceType": "com.xinghaogroup.health_app_server.util.FileUtil"
+    },
+    {
+      "name": "aliyun.oss.access-key-id",
+      "type": "java.lang.String",
+      "description": "阿里云OSS访问密钥ID",
+      "sourceType": "com.xinghaogroup.health_app_server.util.FileUtil"
+    },
+    {
+      "name": "aliyun.oss.access-key-secret",
+      "type": "java.lang.String",
+      "description": "阿里云OSS访问密钥",
+      "sourceType": "com.xinghaogroup.health_app_server.util.FileUtil"
+    },
+    {
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String",
+      "description": "阿里云OSS存储桶名称",
+      "sourceType": "com.xinghaogroup.health_app_server.util.FileUtil"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+spring:
+  elasticsearch:
+    uris: http://8.153.201.207:9200  # 生产环境ES集群地址
+    username: ${ELASTICSEARCH_USERNAME}
+    password: ${ELASTICSEARCH_PASSWORD}
+    connection-timeout: 5000
+    socket-timeout: 10000
+
+logging:
+  level:
+    root: INFO  # 生产环境使用INFO日志
+    org.springframework: INFO
+    com.xinghaogroup: INFO

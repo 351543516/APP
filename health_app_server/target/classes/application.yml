@@ -1,0 +1,67 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://8.153.201.207:3306/health_app_db?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: lh
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 20
+      minimum-idle: 5
+      max-lifetime: 600000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl.auto: update
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  sql:
+    init:
+      mode: never
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000
+  header: Authorization
+  prefix: Bearer
+
+aliyun:
+  ai:
+    app-key: ${ALIYUN_AI_APP_KEY}
+    app-secret: ${ALIYUN_AI_APP_SECRET}
+    appCode: ${ALIYUN_AI_APP_CODE}
+    host: https://health.market.alicloudapi.com
+    path: /ai-health-diagnosis/tongue-analysis
+    tongue-api-url: https://ali-market-tongue-detect-v2.macrocura.com/diagnose/face-tongue/result/
+    face-api-url: https://ali-market-tongue-detect-v2.macrocura.com/diagnose/face-tongue/report/
+    constitution-api-url: https://ali-market-tongue-detect-v2.macrocura.com/diagnose/face-tongue/constitution/
+    timeout: 30000
+  sms:
+    region-id: cn-shanghai
+    access-key-id: ${ALIYUN_SMS_ACCESS_KEY}
+    access-key-secret: ${ALIYUN_SMS_SECRET}
+    sign-name: Health Assistant
+    template-code: SMS_319481348
+    sign-id: 2e65b1bb3d054466b82f0c9d125465e2
+    api-url: https://gyytz.market.alicloudapi.com/sms/smsSend
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: ${ALIYUN_OSS_KEY_ID}
+    access-key-secret: ${ALIYUN_OSS_SECRET}
+    bucket-name: mzyy
+    url-prefix: https://mzyy-app.oss-cn-hangzhou.aliyuncs.com
+
+logging:
+   level:
+     root: info
+     com.xinghaogroup.health_app_server: debug # 替换为您的包名
+     org.springframework.security: debug
+     org.springframework.data: debug
